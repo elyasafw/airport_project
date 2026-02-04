@@ -7,7 +7,6 @@ def user_loading(filename):
             csv_reader = csv.reader(file)
             for row in csv_reader:
                 matrix.append(row)
-\
 
 
 def authentication(username, password, matrix):
@@ -16,9 +15,8 @@ def authentication(username, password, matrix):
             return True
     return False
 
+
 def user_input():
     username = input("Enter username: ")
     password = input("Enter password: ")
     return username, password
-            
-
