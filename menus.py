@@ -9,4 +9,3 @@ def check_user():
         else:
             print("please enter 1 or 2")
 
-print(check_user())
