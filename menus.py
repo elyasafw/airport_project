@@ -12,11 +12,12 @@ def check_user():
             print("please enter 1 or 2")
 
 def menu_meneger(filename):
-    if check_user() == "menger":
-        username, password = user_input
+    username, password = user_input()
     user_data = user_loading(filename)
     if authentication(username, password, user_data):
-        pass
+        return True
+    else:
+        return False    
         
         
 
