@@ -22,4 +22,4 @@ def load_airport ():
             airlines_list = []
             for row in csv.reader(f):
                 airlines_list.append(row)
-        return airlines_list
+            return airlines_list
