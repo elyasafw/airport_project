@@ -8,4 +8,3 @@ def user_loading(filename):
             for row in csv_reader:
                 matrix.append(row)
             return matrix
-print(user_loading('credentials.csv')) 
