@@ -11,10 +11,20 @@ def check_user():
 
 
 def manager_menu():
-    print("Welcome to the management menu\n1. Show available airlines\n2. Buying a new airline\n3. Show available budget\n4. exit")
+    print("Welcome to the management menu\n\n1. Show available airlines\n2. Buying a new airline\n3. Show available budget\n4. exit")
     while True:
-        manager_choise = input("Select desired action:  ")
-        if manager_choise not in ["1", "2", "3", "4"]:
-            print("Please choose only between 1 - 4")
-        else:
+        manager_choise = input("\nSelect desired action (1-4):  ")
+        if manager_choise in ["1", "2", "3", "4"]:
             return manager_choise
+        else:
+            print("Please select only between 1 - 4")
+        
+
+def client_menu():
+    print("Welcome to our airline :)\n\n1. Buying a flight ticket\n2. exit")
+    while True:
+        client_choise = input("\nSelect desired action (1/2):  ")
+        if client_choise in ["1", "2"]:
+            return client_choise
+        else:
+            print("Please select only between 1 / 2")
