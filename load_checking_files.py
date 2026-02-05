@@ -37,13 +37,13 @@ def flight_list(file_json):
 
 
 
-def read_json():
-    available_flights = "./available_flights.json "
-    if files_exiest(available_flights):
-        with open(available_flights, 'r', encoding='utf-8') as f:
-    
-    
-
+def read_json(json_file):
+    if files_exiest(json_file):
+        with open(json_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data
+ 
+ 
 def airport_cod_city(airport_code, airport_data):
     for airport in airport_data:
         if airport[0] == airport_code:
