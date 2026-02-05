@@ -1,7 +1,7 @@
 import json
 
 
-from load_checking_files import load_airport,load_budget,read_write_json
+from load_checking_files import load_airport,load_budget,readgi_json
 def menu_nwe_line():
     print("Choose if you want to add a new line.")
     manager = input("1.choose add a new line: 2.coose not add a new line:")
@@ -37,7 +37,7 @@ def add_line_json(enter_code_origin, enter_code_dest):
     while True:
         approval = input("you sour add new line? (y/n):  ").lower()
         if approval == "y":
-            new_list = read_write_json()
+            new_list = read_json()
             new_list["available_lines"].append({'origin_airport': enter_code_origin, 'destination_airport': enter_code_dest})
             print(new_list)
             break
