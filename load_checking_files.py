@@ -43,7 +43,7 @@ def read_json(json_file):
             data = json.load(f)
             return data
  
- 
+
 def airport_cod_city(airport_code, airport_data):
     for airport in airport_data:
         if airport[0] == airport_code:
@@ -51,7 +51,7 @@ def airport_cod_city(airport_code, airport_data):
             return airport_name
 
 
-def buying_client(flights_data):
+def buying_client(flights_data, airpor_data):
     print("--- flight list ---")
     for i in range(1, len(flights_data)):
         origin = airport_cod_city(flights_data[0], airpor_data)
@@ -81,7 +81,7 @@ def Flight_price_calculation(origin, destination, airport_data):
     for airport in airport_data:
         if airport[0] == origin:
             price = int(airport[5])
-            pass
+            
         
 
         
