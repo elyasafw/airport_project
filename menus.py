@@ -16,4 +16,5 @@ def manager_menu():
         manager_choise = input("Select desired action:  ")
         if manager_choise not in ["1", "2", "3", "4"]:
             print("Please choose only between 1 - 4")
-        return manager_choise
+        else:
+            return manager_choise
