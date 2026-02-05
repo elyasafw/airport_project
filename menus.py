@@ -1,5 +1,3 @@
-from auth import user_input, user_loading, authentication
-
 def check_user():
     print("1. manager \n2. client \n")
     while True:
