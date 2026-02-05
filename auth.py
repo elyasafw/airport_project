@@ -1,32 +1,24 @@
-import csv, sys
+import csv
 
 
-def user_loading(filename):
-    matrix = []
-    with open(filename, mode='r', encoding='utf-8') as file:
+def user_loading(file):
+    users_list = []
+    with open(file, mode='r', encoding='utf-8') as file:
             csv_reader = csv.reader(file)
             for row in csv_reader:
-                matrix.append(row)
-            return matrix
+                users_list.append(row)
+            return users_list
     
-def authentication(username, password, matrix):
-    print("please enter your username and password")
-    for user in matrix:
+def authentication(username, password, users_list):
+    for user in users_list:
         if user[0] == username and user[1] == password:
-            print("Welcome " + username)
-            return True    
-    print("Invalid username or password")
-    exit()
-
+            print("Manager login successful")
+            return True
+         
+    exit("Login failed! System is closing..")
 
 
 def user_input():
-    username = input("Enter username: ")
-    password = input("Enter password: ")
+    username = input("Please enter your username:  ")
+    password = input("Please enter your password:  ")
     return username, password
-
-
-
-            
-
-
