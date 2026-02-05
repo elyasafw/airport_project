@@ -3,19 +3,19 @@ from load_checking_files import read_json, load_airport, load_budget, update_bud
 from menus import new_line_menu
 
 def budget_check_codes(origin_code, dest_code):
-    origin_prine = 0
+    origin_price = 0
     dest_price = 0
     found = False
     airport_list = load_airport("./airport_entry_fee.csv")
     for row in airport_list:
         if origin_code in row:
-            origin_prine = int(row[5])
+            origin_price = int(row[5])
             for row in airport_list:
                 if dest_code in row:
                     dest_price = int(row[5])
                     found = True
                     break
-            final_price = float(origin_prine + dest_price)
+            final_price = float(origin_price + dest_price)
             print(f"\nA match was found for the flight codes you selected. | The cost of establishing the flight line is: {final_price}")
             break
     if not found:
