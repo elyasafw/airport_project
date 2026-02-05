@@ -11,15 +11,20 @@ else:
 def main():
     print("please enter your choice:")
     if check_user() == "menger":
-       print("welcome to meneger")
-       print("please enter your username and password")
-       username, password = user_input()
-       user_data = user_loading(filename_meneger)
-       print(user_data)
-       print(username, password)
-       if authentication(username, password, user_data):
+        print("welcome to meneger")
+        print("please enter your username and password")
+        username, password = user_input()
+        user_data = user_loading(filename_meneger)
+        print(user_data)
+        print(username, password)
+        if authentication(username, password, user_data):
            print("login success")
+        else:
+           print("eror")
+           exit()
+        
 main()
+
            
          
           
