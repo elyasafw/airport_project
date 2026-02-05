@@ -2,7 +2,6 @@ from pathlib import Path
 import csv, json
 
 
-
 def files_exiest(filename):
     file_path = Path(filename)
     if file_path.exists():
@@ -15,6 +14,11 @@ def files_exiest(filename):
 def load_budget():
     with open('./budget.txt', 'r', encoding='utf-8') as f:
         return float(f.read())
+    
+
+def update_budget(budget):
+    with open('./budget.txt', 'w', encoding='utf-8') as f:
+        f.write(str(budget))
     
 
 def load_airport (filnam_csv):
@@ -36,14 +40,13 @@ def flight_list(file_json):
     return [origin_code, destination_code]
 
 
-
 def read_json(json_file):
     if files_exiest(json_file):
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
             return data
  
- 
+
 def airport_cod_city(airport_code, airport_data):
     for airport in airport_data:
         if airport[0] == airport_code:
@@ -51,7 +54,7 @@ def airport_cod_city(airport_code, airport_data):
             return airport_name
 
 
-def buying_client(flights_data):
+def buying_client(flights_data, airpor_data):
     print("--- flight list ---")
     for i in range(1, len(flights_data)):
         origin = airport_cod_city(flights_data[0], airpor_data)
@@ -76,12 +79,11 @@ def buying_client(flights_data):
     return flights_data[choice_num - 1]
 
 
-
 def Flight_price_calculation(origin, destination, airport_data):
     for airport in airport_data:
         if airport[0] == origin:
             price = int(airport[5])
-            pass
+            
         
 
         

@@ -12,13 +12,13 @@ def user_loading(file):
 def authentication(username, password, users_list):
     for user in users_list:
         if user[0] == username and user[1] == password:
-            print("Manager login successful")
+            print("Manager login successful\n")
             return True
          
     exit("Login failed! System is closing..")
 
 
 def user_input():
-    username = input("Please enter your username:  ")
+    username = input("\nPlease enter your username:  ")
     password = input("Please enter your password:  ")
     return username, password
