@@ -25,7 +25,7 @@ def load_airport ():
             return airlines_list
         
 
-def read_write_json():
+def read_json():
     available_flights = "./available_flights.json "
     if files_exiest(available_flights):
         with open(available_flights, 'r', encoding='utf-8') as f:
