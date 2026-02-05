@@ -25,7 +25,7 @@ def load_airport (filnam_csv):
             for row in csv.reader(f):
                 airlines_list.append(row)
             return airlines_list
-        
+
 
 def flight_list(file_json):
     with open(file_json, 'r', encoding='utf-8') as f:
