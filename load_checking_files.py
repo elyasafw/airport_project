@@ -15,8 +15,8 @@ def load_budget():
         return float(f.read())
     
 
-def load_airport ():
-    airlines = "./airport_entry_fee.csv"
+def load_airport (filnam_csv):
+    airlines = filnam_csv
     if files_exiest(airlines):
         with open(airlines, 'r', encoding='utf-8') as f:
             airlines_list = []
@@ -25,28 +25,37 @@ def load_airport ():
             return airlines_list
         
 
-def read_write_json():
-    available_flights = "./available_flights.json "
-    if files_exiest(available_flights):
-        with open(available_flights, 'r', encoding='utf-8') as f:
+
+def flight_list(file_json):
+    with open(file_json, 'r', encoding='utf-8') as f:
+        airlines_data = json.load(f)
+        airlines_data = airlines_data["available_lines"]
+        origin_code = airlines_data[0]["origin_airport"] 
+        destination_code = airlines_data[0]["destination_airport"]
+    return [origin_code, destination_code]
+
+
+def read_json(flie_json):
+    if files_exiest(flie_json):
+        with open(flie_json, 'r', encoding='utf-8') as f:
             airlines_list = json.load(f)
             return airlines_list
+        
+    
+
+def airport_cod_city(airport_code, airport_data):
+    for airport in airport_data:
+        if airport[0] == airport_code:
+            airport_name = airport[2]
+            return airport_name
 
 
-def flight_list():
-    with open('available_flights.json', 'r', encoding='utf-8') as f:
-        airlines_data = json.load(f)
-        return airlines_data.get("available_lines", [])
 
-flight = flight_list()
-
-all_flights = flight_list()
-
-def buying_client(flights_data):
+          def buying_client(flights_data):
     print("--- flight list ---")
-    for i, flight in enumerate(flights_data, 1):
-        origin = flight['origin_airport']
-        dest = flight['destination_airport']
+    for i in range(1, len(flights_data)):
+        origin = airport_cod_city(flights_data[0], airpor_data)
+        dest = airport_cod_city(flights_data[1], airpor_data)
         print(f"{i}. {origin} -> {dest}")
     
     vlide = False
@@ -68,3 +77,17 @@ def buying_client(flights_data):
 
 
 
+
+
+
+
+def Flight_price_calculation(origin, destination, airport_data):
+    for airport in airport_data:
+        if airport[0] == origin:
+            price = int(airport[5])
+            pass
+        
+
+        
+        
+         
